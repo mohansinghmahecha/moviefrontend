@@ -46,17 +46,20 @@ export default function Logout() {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/users/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: fullname,
-          email,
-          password,
-        }),
-      });
+      const response = await fetch(
+        "https://entertainment-backend-1-5p0s.onrender.com/api/users/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: fullname,
+            email,
+            password,
+          }),
+        }
+      );
 
       const data = await response.json();
 
